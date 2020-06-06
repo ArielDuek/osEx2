@@ -47,10 +47,10 @@ RM = "C:\Program Files\JetBrains\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\ariel\CLionProjects\osEx2
+CMAKE_SOURCE_DIR = C:\Users\ariel\CLionProjects\SYNC
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\ariel\CLionProjects\osEx2\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\ariel\CLionProjects\SYNC\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\ariel\CLionProjects\osEx2\cmake-build-debug\CMakeFiles C:\Users\ariel\CLionProjects\osEx2\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\ariel\CLionProjects\SYNC\cmake-build-debug\CMakeFiles C:\Users\ariel\CLionProjects\SYNC\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\ariel\CLionProjects\osEx2\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\ariel\CLionProjects\SYNC\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -110,44 +110,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named os2
+# Target rules for targets named SYNC
 
 # Build rule for target.
-os2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 os2
-.PHONY : os2
+SYNC: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 SYNC
+.PHONY : SYNC
 
 # fast build rule for target.
-os2/fast:
-	$(MAKE) -f CMakeFiles\os2.dir\build.make CMakeFiles/os2.dir/build
-.PHONY : os2/fast
+SYNC/fast:
+	$(MAKE) -f CMakeFiles\SYNC.dir\build.make CMakeFiles/SYNC.dir/build
+.PHONY : SYNC/fast
 
-temp.obj: temp.c.obj
+2.3.2.obj: 2.3.2.c.obj
 
-.PHONY : temp.obj
+.PHONY : 2.3.2.obj
 
 # target to build an object file
-temp.c.obj:
-	$(MAKE) -f CMakeFiles\os2.dir\build.make CMakeFiles/os2.dir/temp.c.obj
-.PHONY : temp.c.obj
+2.3.2.c.obj:
+	$(MAKE) -f CMakeFiles\SYNC.dir\build.make CMakeFiles/SYNC.dir/2.3.2.c.obj
+.PHONY : 2.3.2.c.obj
 
-temp.i: temp.c.i
+2.3.2.i: 2.3.2.c.i
 
-.PHONY : temp.i
+.PHONY : 2.3.2.i
 
 # target to preprocess a source file
-temp.c.i:
-	$(MAKE) -f CMakeFiles\os2.dir\build.make CMakeFiles/os2.dir/temp.c.i
-.PHONY : temp.c.i
+2.3.2.c.i:
+	$(MAKE) -f CMakeFiles\SYNC.dir\build.make CMakeFiles/SYNC.dir/2.3.2.c.i
+.PHONY : 2.3.2.c.i
 
-temp.s: temp.c.s
+2.3.2.s: 2.3.2.c.s
 
-.PHONY : temp.s
+.PHONY : 2.3.2.s
 
 # target to generate assembly for a file
-temp.c.s:
-	$(MAKE) -f CMakeFiles\os2.dir\build.make CMakeFiles/os2.dir/temp.c.s
-.PHONY : temp.c.s
+2.3.2.c.s:
+	$(MAKE) -f CMakeFiles\SYNC.dir\build.make CMakeFiles/SYNC.dir/2.3.2.c.s
+.PHONY : 2.3.2.c.s
 
 # Help Target
 help:
@@ -155,12 +155,12 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... os2
+	@echo ... SYNC
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... temp.obj
-	@echo ... temp.i
-	@echo ... temp.s
+	@echo ... 2.3.2.obj
+	@echo ... 2.3.2.i
+	@echo ... 2.3.2.s
 .PHONY : help
 
 

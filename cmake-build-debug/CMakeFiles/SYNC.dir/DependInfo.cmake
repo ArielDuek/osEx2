@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/ariel/CLionProjects/osEx2/temp.c" "C:/Users/ariel/CLionProjects/osEx2/cmake-build-debug/CMakeFiles/os2.dir/temp.c.obj"
+  "C:/Users/ariel/CLionProjects/SYNC/2.3.2.c" "C:/Users/ariel/CLionProjects/SYNC/cmake-build-debug/CMakeFiles/SYNC.dir/2.3.2.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

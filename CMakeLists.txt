@@ -1,6 +1,13 @@
 cmake_minimum_required(VERSION 3.16)
-project(os2)
+project(SYNC C)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_C_STANDARD 11)
 
-add_executable(os2 temp.c)
+add_executable(SYNC
+#        2.1.1.c
+#        2.1.2.c
+#        2.2.1.c
+#        2.2.2.c
+#        2.3.1.c
+        2.3.2.c
+        )
