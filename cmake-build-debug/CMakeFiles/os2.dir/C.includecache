@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/ariel/CLionProjects/os2/temp.c
+pthread.h
+-
+semaphore.h
+-
+stdio.h
+-
+unistd.h
+-
+
