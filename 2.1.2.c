@@ -44,6 +44,7 @@ void takeRight(int phnum){
     }
 }
 
+/** ----- Changed ------- **/
 void test(int phnum)
 {
     if (state[phnum] == HUNGRY || state[phnum] == TAKE_RIGHT || state[phnum] == TAKE_LEFT){

@@ -27,7 +27,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19d27d53-0384-423d-a379-51090ef2d41e" name="Default Changelist" comment="" />
+    <list default="true" id="19d27d53-0384-423d-a379-51090ef2d41e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/2.1.1.c" beforeDir="false" afterPath="$PROJECT_DIR$/2.1.1.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2.1.2.c" beforeDir="false" afterPath="$PROJECT_DIR$/2.1.2.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2.2.1.c" beforeDir="false" afterPath="$PROJECT_DIR$/2.2.1.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2.2.2.c" beforeDir="false" afterPath="$PROJECT_DIR$/2.2.2.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2.3.1.c" beforeDir="false" afterPath="$PROJECT_DIR$/2.3.1.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2.3.2.c" beforeDir="false" afterPath="$PROJECT_DIR$/2.3.2.c" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,6 +83,7 @@
       <workItem from="1591476353170" duration="5090000" />
       <workItem from="1591482283436" duration="31000" />
       <workItem from="1591482353917" duration="991000" />
+      <workItem from="1591483753325" duration="1201000" />
     </task>
     <servers />
   </component>
@@ -133,9 +141,17 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1591362250414" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1591484584678">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1280.680@0.0.1280.680" timestamp="1591484584678" />
     <state x="450" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591367030280">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="450" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1591367030280" />
+    <state x="297" y="-6" width="670" height="676" key="search.everywhere.popup" timestamp="1591484583304">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="-6" width="670" height="676" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1591484583304" />
   </component>
 </project>

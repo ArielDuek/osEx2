@@ -6,12 +6,14 @@
 #define N 5
 #define THINKING 0
 #define HUNGRY 3
-#define TAKE_RIGHT 2
-#define TAKE_LEFT 1
 #define EATING 4
-#define PUT 5
 #define LEFT (phnum + 4) % N
 #define RIGHT (phnum + 1) % N
+
+/** ----- Changed ------- **/
+#define TAKE_RIGHT 2
+#define TAKE_LEFT 1
+#define PUT 5
 
 int state[N];
 int phil[N] = { 0, 1, 2, 3, 4 };
@@ -19,7 +21,9 @@ int phil[N] = { 0, 1, 2, 3, 4 };
 sem_t mutex;
 sem_t S[N];
 
-void takeLeft(int phnum){
+/** ----- NEW ------- **/
+void takeLeft(int phnum)
+{
     if (state[phnum] == HUNGRY || state[phnum] == PUT) {
         state[phnum] = TAKE_LEFT;
         printf("Philosopher %d takes fork %d \n",phnum + 1, LEFT + 1);
@@ -32,6 +36,7 @@ void takeLeft(int phnum){
     }
 }
 
+/** ----- NEW ------- **/
 void takeRight(int phnum){
     if (state[phnum] == HUNGRY || state[phnum] == PUT) {
         state[phnum] = TAKE_RIGHT;
@@ -46,6 +51,7 @@ void takeRight(int phnum){
     }
 }
 
+/** ----- Changed ------- **/
 void test(int phnum)
 {
     if (state[phnum] == HUNGRY || state[phnum] == TAKE_RIGHT || state[phnum] == TAKE_LEFT || state[phnum] == PUT){
@@ -77,6 +83,7 @@ void take_fork(int phnum) //get hungry
 {
     sem_wait(&mutex);
 
+/** ----- Changed ------- **/
     if (state[phnum] == THINKING) {
         // state that hungry
         state[phnum] = HUNGRY;

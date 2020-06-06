@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <unistd.h>
 
-
 #define N 5
 #define THINKING 2
 #define HUNGRY 1
@@ -75,6 +74,7 @@ void put_fork(int phnum)
            phnum + 1, LEFT + 1, phnum + 1);
     printf("Philosopher %d is thinking\n", phnum + 1);
 
+/** ----- Changed ------- **/
     test((phnum+1)%5);
     // test((phnum-2)%6);
 

@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <unistd.h>
 
-
 #define N 5
 #define THINKING 2
 #define HUNGRY 1
@@ -20,6 +19,7 @@ sem_t S[N];
 void test(int phnum)
 {
     if (state[phnum] == HUNGRY){
+        /** ----- Changed ------- **/
 //        && state[LEFT] != EATING
 //        && state[RIGHT] != EATING) {
         // state that eating
@@ -43,6 +43,7 @@ void test(int phnum)
 // take up chopsticks
 void take_fork(int phnum)
 {
+    /** ----- Changed ------- **/
     if (phnum%2 == 1) sleep(1000000);
     sem_wait(&mutex);
 
@@ -75,6 +76,7 @@ void put_fork(int phnum)
            phnum + 1, LEFT + 1, phnum + 1);
     printf("Philosopher %d is thinking\n", phnum + 1);
 
+    /** ----- Changed ------- **/
     test((phnum+2)%6);
     test((phnum-2)%6);
 

@@ -19,7 +19,8 @@ int phil[N] = { 0, 1, 2, 3, 4 };
 sem_t mutex;
 sem_t S[N];
 
-void takeLeft(int phnum){
+void takeLeft(int phnum)
+{
     if (state[phnum] == HUNGRY || state[phnum] == PUT) {
         state[phnum] = TAKE_LEFT;
         printf("Philosopher %d takes fork %d \n",phnum + 1, LEFT + 1);
@@ -49,11 +50,11 @@ void takeRight(int phnum){
 void test(int phnum)
 {
     if (state[phnum] == HUNGRY || state[phnum] == TAKE_RIGHT || state[phnum] == TAKE_LEFT || state[phnum] == PUT){
-        if ((state[LEFT] != EATING && state[LEFT] != TAKE_RIGHT && state[phnum] != TAKE_LEFT && state[LEFT] != PUT) || ((state[phnum] == PUT || state[phnum] == TAKE_RIGHT) && state[LEFT] == PUT)) {
+        if ((state[LEFT] != EATING && state[LEFT] != TAKE_RIGHT && state[phnum] != TAKE_LEFT && state[LEFT] != PUT) || ((state[phnum] == PUT /** ----- Changed ------- **/|| state[phnum] == TAKE_RIGHT/** ----- Changed ------- **/) && state[LEFT] == PUT)) {
             takeLeft(phnum);
             sem_post(&S[phnum]);
         }
-        else if ((state[RIGHT] != EATING && state[RIGHT] != TAKE_LEFT && state[phnum] != TAKE_RIGHT && state[RIGHT] != PUT) || ((state[phnum] == PUT || state[phnum] == TAKE_LEFT) && state[RIGHT] == PUT)) {
+        else if ((state[RIGHT] != EATING && state[RIGHT] != TAKE_LEFT && state[phnum] != TAKE_RIGHT && state[RIGHT] != PUT) || ((state[phnum] == PUT /** ----- Changed ------- **/|| state[phnum] == TAKE_LEFT/** ----- Changed ------- **/) && state[RIGHT] == PUT)) {
             takeRight(phnum);
             sem_post(&S[phnum]);
         }
