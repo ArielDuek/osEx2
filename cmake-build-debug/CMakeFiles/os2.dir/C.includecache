@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/ariel/CLionProjects/os2/temp.c
+C:/Users/ariel/CLionProjects/osEx2/temp.c
 pthread.h
 -
 semaphore.h

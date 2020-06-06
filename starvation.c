@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
+
 #define N 5
 #define THINKING 2
 #define HUNGRY 1
@@ -11,7 +12,6 @@
 #define RIGHT (phnum + 1) % N
 
 int state[N];
-int forkState[N];
 int phil[N] = { 0, 1, 2, 3, 4 };
 
 sem_t mutex;
@@ -19,19 +19,18 @@ sem_t S[N];
 
 void test(int phnum)
 {
-    if (state[phnum] == HUNGRY
-        && state[LEFT] != EATING && !forkState[LEFT]
-        && state[RIGHT] != EATING && !forkState[RIGHT]) {
+    if (state[phnum] == HUNGRY){
+//        && state[LEFT] != EATING
+//        && state[RIGHT] != EATING) {
         // state that eating
         state[phnum] = EATING;
-        forkState[phnum] = 1;
 
         sleep(2);
 
         printf("Philosopher %d takes fork %d and %d\n",
                phnum + 1, LEFT + 1, phnum + 1);
 
-        printf("Philosopher %d is Eating\n", phnum + 1);
+        printf("Philosopher --------------------------------------------- %d is Eating\n", phnum + 1);
 
         // sem_post(&S[phnum]) has no effect
         // during takefork
@@ -44,7 +43,7 @@ void test(int phnum)
 // take up chopsticks
 void take_fork(int phnum)
 {
-
+    if (phnum%2 == 1) sleep(1000000);
     sem_wait(&mutex);
 
     // state that hungry
@@ -76,8 +75,8 @@ void put_fork(int phnum)
            phnum + 1, LEFT + 1, phnum + 1);
     printf("Philosopher %d is thinking\n", phnum + 1);
 
-    test(LEFT);
-    test(RIGHT);
+    test((phnum+2)%6);
+    test((phnum-2)%6);
 
     sem_post(&mutex);
 }
@@ -105,7 +104,7 @@ int main()
     int i;
     pthread_t thread_id[N];
 
-    // initialize the mutexes
+    // initialize the semaphores
     sem_init(&mutex, 0, 1);
 
     for (i = 0; i < N; i++)

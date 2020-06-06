@@ -27,7 +27,7 @@ void takeLeft(int phnum){
     else if (state[phnum] == TAKE_RIGHT) {
         state[phnum] = EATING;
         printf("Philosopher %d takes fork %d\n",phnum + 1, LEFT + 1);
-        printf("Philosopher %d is EATING\n",phnum + 1);
+        printf("Philosopher --------------------------------------------- %d is EATING\n",phnum + 1);
         sleep(2);//eat 2 sec
     }
 }
@@ -40,7 +40,7 @@ void takeRight(int phnum){
     else if (state[phnum] == TAKE_LEFT) {
         state[phnum] = EATING;
         printf("Philosopher %d takes fork %d\n",phnum + 1, phnum + 1);
-        printf("Philosopher %d is EATING\n",phnum + 1);
+        printf("Philosopher --------------------------------------------- %d is EATING\n",phnum + 1);
 
         sleep(2);//eat 2 sec
     }

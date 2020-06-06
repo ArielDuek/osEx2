@@ -43,7 +43,7 @@ void test(int phnum)
 // take up chopsticks
 void take_fork(int phnum)
 {
-   // if (phnum%2 == 1) sleep(1000000);
+    // if (phnum%2 == 1) sleep(1000000);
     sem_wait(&mutex);
 
     // state that hungry
@@ -57,7 +57,7 @@ void take_fork(int phnum)
     sem_post(&mutex);
 
     // if unable to eat wait to be signalled
-	sem_wait(&S[phnum]);
+    sem_wait(&S[phnum]);
 
     sleep(1);
 }
@@ -75,8 +75,8 @@ void put_fork(int phnum)
            phnum + 1, LEFT + 1, phnum + 1);
     printf("Philosopher %d is thinking\n", phnum + 1);
 
-	test((phnum+1)%5);
-   // test((phnum-2)%6);
+    test((phnum+1)%5);
+    // test((phnum-2)%6);
 
     sem_post(&mutex);
 }
