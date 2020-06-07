@@ -1,3 +1,20 @@
+/**
+ * We edit the program dining_philosophers.c to get into a starvation condition with a high probability.
+ *
+ * We caused that when entering the fork-taking function,
+ * some philosophers (2,4) would wait until another philosopher woke them up to take a fork using
+ * if (phnum%2 == 1) sem_wait(&S[phnum])
+ * (the indexes is 1,3)
+ * while at the same time causing the other philosophers (1,3,5) to wake each other up using
+ * test((phnum-2)%6);
+ * test((phnum+2)%6);
+ * (the indexes is 0,2,4)
+ * but never wake the "waiting philosophers",
+ * causing them to remain "waiting"
+ *
+ * And so a STARVATION was created.
+ */
+
 #include <pthread.h>
 #include <semaphore.h>
 #include <stdio.h>
@@ -18,10 +35,9 @@ sem_t S[N];
 
 void test(int phnum)
 {
-    if (state[phnum] == HUNGRY){
-        /** ----- Changed ------- **/
-//        && state[LEFT] != EATING
-//        && state[RIGHT] != EATING) {
+    if (state[phnum] == HUNGRY//){
+        && state[LEFT] != EATING
+        && state[RIGHT] != EATING) {
         // state that eating
         state[phnum] = EATING;
 
@@ -44,11 +60,13 @@ void test(int phnum)
 void take_fork(int phnum)
 {
     /** ----- Changed ------- **/
-    if (phnum%2 == 1) sleep(1000000);
-    sem_wait(&mutex);
-
     // state that hungry
     state[phnum] = HUNGRY;
+
+    //if (phnum%2 == 1) sleep(1000000);
+    if (phnum%2 == 1) sem_wait(&S[phnum]);
+    sem_wait(&mutex);
+
 
     printf("Philosopher %d is Hungry\n", phnum + 1);
 
@@ -77,8 +95,8 @@ void put_fork(int phnum)
     printf("Philosopher %d is thinking\n", phnum + 1);
 
     /** ----- Changed ------- **/
-    test((phnum+2)%6);
     test((phnum-2)%6);
+    test((phnum+2)%6);
 
     sem_post(&mutex);
 }
